@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mafer Vásquez — BI & Data</title>
+  <meta name="description" content="Portafolio de María Fernanda Vásquez Alatriste González, Business Intelligence Intern @ Unilever. Power BI, Python, Databricks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra superior estilo navegador / EX8 -->
+  <header class="topbar">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <div class="url">mafervasquez.github.io</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO: estructura Riya + tipografía pixel EX8 -->
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Hey! I am</p>
+      <h1>MAFER<br><span>VÁSQUEZ</span></h1>
+      <p class="subtitle">Business Intelligence Intern @ Unilever<br>Power BI · Python · Databricks · Data Pipelines</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#works">View Work ↗</a>
+        <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+      </div>
+      <p class="status">● Open to work — CDMX · On-site · Hybrid · Remote</p>
+    </section>
+
+    <!-- Carpetas estilo Elaine: abren una ventana a la vez -->
+    <section class="desktop">
+      <p class="section-label">/ desktop — haz clic en una carpeta</p>
+      <div class="folders">
+        <button class="folder" data-open="win-about">📁<span>profile</span></button>
+        <button class="folder" data-open="win-works">📁<span>works</span></button>
+        <button class="folder" data-open="win-projects">📁<span>projects</span></button>
+        <button class="folder" data-open="win-education">📁<span>education</span></button>
+        <button class="folder" data-open="win-services">📁<span>services</span></button>
+        <button class="folder" data-open="win-contact">📁<span>contact</span></button>
+      </div>
+
+      <!-- Ventana ABOUT -->
+      <article class="window" id="win-about">
+        <div class="window-bar">
+          <span>C:\MAFER\about</span>
+          <button class="close" data-close="win-about">✕</button>
+        </div>
+        <div class="window-body about-grid">
+          <div>
+            <h2>About me</h2>
+            <p>Soy estudiante de Ing. en Computación en la UAM Azcapotzalco y BI Intern en Unilever desde junio 2026. Construyo pipelines y dashboards que automatizan reportes manuales, no solo gráficas bonitas.</p>
+            <p>También me interesa la ruta Cloud / DevSecOps y el hardware: microcontroladores, soldadura de PCB y electrónica.</p>
+            <p><strong>Cómo trabajo:</strong> primero entiendo qué pregunta de negocio hay que responder, luego limpio y modelo los datos, y al final construyo el tablero o la automatización. Si un reporte se puede hacer solo, lo automatizo.</p>
+          </div>
+          <!-- Bloque JSON estilo Eko Susilo -->
+          <pre class="code-block">{
+  "name": "Mafer Vásquez",
+  "role": "BI Intern @ Unilever",
+  "stack": ["Power BI", "Python",
+    "Databricks", "PySpark"],
+  "location": "Naucalpan, MX",
+  "status": "Open to work"
+}</pre>
+        </div>
+      </article>
+
+      <!-- Ventana WORKS: Unilever, con caso de estudio por proyecto -->
+      <article class="window hidden" id="win-works">
+        <div class="window-bar">
+          <span>C:\MAFER\works</span>
+          <button class="close" data-close="win-works">✕</button>
+        </div>
+        <div class="window-body" id="works">
+          <h2>Proyectos — Unilever</h2>
+          <p class="muted">Business Intelligence Intern, jun 2026 — presente. Sin datos sensibles. Solo el problema, el flujo y las herramientas.</p>
+          <div class="projects">
+            <details open>
+              <summary>Homologación de SKUs</summary>
+              <p><strong>Problema:</strong> los distribuidores nombran los productos a su manera, así que el mismo SKU aparecía con nombres distintos y no se podía comparar.</p>
+              <p><strong>Qué hice:</strong> un pipeline en Databricks que recibe un Excel, hace fuzzy match contra el catálogo oficial de Unilever y muestra los posibles matches en widgets, con su % de coincidencia. La persona aprueba el match y se guarda en la tabla “catálogo ean”, que se reutiliza en las siguientes corridas.</p>
+              <p><strong>Qué aprendí:</strong> que un match automático nunca es 100% confiable sin validación humana, y que guardar lo ya catalogado ahorra más trabajo que mejorar el algoritmo.</p>
+              <p class="tags">Databricks · PySpark · Fuzzy Match</p>
+            </details>
+            <details>
+              <summary>Tablero SISO — Sell In / Sell Out</summary>
+              <p><strong>Problema:</strong> las ventas se reportaban desde 5 archivos Excel distintos, a mano, y era fácil cometer errores.</p>
+              <p><strong>Qué hice:</strong> un pipeline en Databricks que lee celdas específicas de esos 5 Excels y alimenta un tablero en Power BI con toneladas, NIV, ventas del mes, forecast para los siguientes meses, cumplimiento, YTD y DDI (días de inventario).</p>
+              <p><strong>Qué aprendí:</strong> a leer datos de celdas exactas en Excel, no solo de tablas limpias, y a pensar el tablero para quien toma decisiones, no solo para mostrar números.</p>
+              <p class="tags">Power BI · Databricks · Excel</p>
+            </details>
+            <details>
+              <summary>Automatización SharePoint → Power BI</summary>
+              <p><strong>Problema:</strong> cada vez que llegaba un archivo nuevo de SISO, alguien tenía que correr el proceso a mano.</p>
+              <p><strong>Qué hice:</strong> SharePoint detecta un archivo nuevo o modificado, dispara un job en Databricks que procesa los Excels de SISO identificando el archivo por nombre y canal, manda un mail al terminar, y otra automatización detecta ese mail de éxito y actualiza el tablero en Power BI.</p>
+              <p class="tags">SharePoint · Power Automate · Databricks</p>
+            </details>
+            <details>
+              <summary>Tablero de visitas</summary>
+              <p><strong>Problema:</strong> nadie sabía qué tableros de Power BI se usaban realmente.</p>
+              <p><strong>Qué hice:</strong> un flujo en Power Automate descarga cada mañana los datos de visitas de Power BI, los guarda en Azure Blob, y un job programado en Databricks lee el archivo más reciente, lo procesa y alimenta el tablero de visitas, que se actualiza diario automáticamente.</p>
+              <p class="tags">Power Automate · Azure Blob · Databricks</p>
+            </details>
+            <details>
+              <summary>Pipelines de Excel</summary>
+              <p>Varios pipelines en Databricks para procesar y limpiar archivos Excel del equipo, con la misma idea: que el Excel desordenado entre, y un dato limpio salga.</p>
+              <p class="tags">Databricks · PySpark · Excel</p>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ventana PROJECTS: proyectos académicos del CV -->
+      <article class="window hidden" id="win-projects">
+        <div class="window-bar">
+          <span>C:\MAFER\projects</span>
+          <button class="close" data-close="win-projects">✕</button>
+        </div>
+        <div class="window-body" id="projects">
+          <h2>Proyectos académicos</h2>
+          <p class="muted">De la carrera y de práctica. Muestran que también programo desde la lógica, no solo tableros.</p>
+          <div class="projects">
+            <details open>
+              <summary>Sistema de Gestión de Centro Cultural</summary>
+              <p>Aplicación de escritorio en Java con Swing, POO y serialización para gestionar un centro cultural.</p>
+              <p class="tags">Java · Java Swing · OOP</p>
+            </details>
+            <details>
+              <summary>Monitoreo y Transmisión de Datos en Tiempo Real</summary>
+              <p>Sistema en C++ con Arduino que monitorea datos y los transmite en tiempo real por UART.</p>
+              <p class="tags">C++ · Arduino · UART</p>
+            </details>
+            <details>
+              <summary>Diseño de Arquitectura Transaccional</summary>
+              <p>Diseño de la arquitectura de un software transaccional con UML: casos de uso, clases y secuencia.</p>
+              <p class="tags">UML · Arquitectura de software</p>
+            </details>
+            <details>
+              <summary>Portal Web Responsive</summary>
+              <p>Portal web responsive con HTML5 y CSS3, versionado en GitHub.</p>
+              <p class="tags">HTML5 · CSS3 · GitHub</p>
+            </details>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ventana EDUCATION -->
+      <article class="window hidden" id="win-education">
+        <div class="window-bar">
+          <span>C:\MAFER\education</span>
+          <button class="close" data-close="win-education">✕</button>
+        </div>
+        <div class="window-body" id="education">
+          <h2>Education &amp; Certifications</h2>
+          <h3>Educación</h3>
+          <ul class="services">
+            <li><strong>Ing. en Computación — UAM Azcapotzalco</strong> · 2024 — presente · 6º semestre</li>
+            <li><strong>Ing. en Software y Desarrollo de Videojuegos — Instituto Amerike</strong> · 2023 — 2024</li>
+          </ul>
+          <h3>Certificaciones</h3>
+          <ul class="services">
+            <li><strong>CS50 — HarvardX</strong> · 2024</li>
+            <li><strong>Responsive Web Design — freeCodeCamp</strong> · 2024</li>
+            <li><strong>IELTS C1</strong> · 2023 · Inglés</li>
+            <li><strong>Cambridge B2 First</strong></li>
+            <li><strong>Teacher's Certification — Anglo</strong> · 2023</li>
+          </ul>
+          <h3>Idiomas</h3>
+          <p>Español — nativo · Inglés — C1</p>
+        </div>
+      </article>
+
+      <!-- Ventana SERVICES -->
+      <article class="window hidden" id="win-services">
+        <div class="window-bar">
+          <span>C:\MAFER\services</span>
+          <button class="close" data-close="win-services">✕</button>
+        </div>
+        <div class="window-body" id="skills">
+          <h2>Servicios freelance</h2>
+          <ul class="services">
+            <li><strong>Dashboards en Power BI</strong> — de Excel desordenado a tablero usable.</li>
+            <li><strong>Migración Excel → Power BI</strong> — limpieza y modelo de datos.</li>
+            <li><strong>Automatización en Python</strong> — limpieza y procesamiento de archivos.</li>
+            <li><strong>Tutorías</strong> — Python, SQL, Power BI e inglés.</li>
+          </ul>
+          <h3>Tech stack</h3>
+          <p class="tags">Power BI · Python · PySpark · Databricks · SQL · Power Automate · SharePoint · Azure Blob · Git · VS Code · Linux · Java · C++ · Arduino</p>
+          <h3>Experience</h3>
+          <ol class="timeline">
+            <li><strong>Jun 2026 — Present · Unilever</strong> — Business Intelligence Intern — dashboards en Power BI, pipelines en Databricks / PySpark y automatizaciones con Power Automate.</li>
+            <li><strong>2026 — Present · Practia</strong> — IT Intern, Inventory &amp; Telecom Systems — inventario telecom (ICC / IMSI / DN), Onix GUI, servicios SOAP / XML con WSO2 / OSB y administración de servidores Linux con MobaXterm y SSH.</li>
+            <li><strong>2025 — Mar 2026 · Starbucks México</strong> — Shift Supervisor</li>
+            <li><strong>2022 — 2025 · Starbucks México</strong> — Barista Trainer</li>
+          </ol>
+        </div>
+      </article>
+
+      <!-- Ventana CONTACT -->
+      <article class="window hidden" id="win-contact">
+        <div class="window-bar">
+          <span>C:\MAFER\contact</span>
+          <button class="close" data-close="win-contact">✕</button>
+        </div>
+        <div class="window-body" id="contact">
+          <h2>Let's work together</h2>
+          <pre class="code-block">&gt; let's talk_
+&gt; email: fvag020701@gmail.com
+&gt; phone: +52 55 4512 2455
+&gt; linkedin: /in/mafer-vasquez-02-07-2001-mf
+&gt; github: /mafervasquez</pre>
+          <p>
+            <a href="mailto:fvag020701@gmail.com">fvag020701@gmail.com</a> ·
+            <a href="tel:+525545122455">+52 55 4512 2455</a> ·
+            <a href="https://www.linkedin.com/in/mafer-vasquez-02-07-2001-mf" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="https://github.com/mafervasquez" target="_blank" rel="noopener">GitHub</a>
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Barra inferior estilo Elaine -->
+  <footer class="taskbar">
+    <span>© 2026 Mafer Vásquez</span>
+    <span>CDMX, México</span>
+    <span>Built with HTML / CSS / JS</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
